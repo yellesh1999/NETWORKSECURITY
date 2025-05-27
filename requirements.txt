@@ -1,8 +1,10 @@
 python-dotenv
 pandas 
 numpy
-pymango
 certifi
+pymongo
+pymongo>=4.0
+
 
 
 
