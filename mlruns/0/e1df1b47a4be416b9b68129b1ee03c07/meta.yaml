@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/D%20YELLESH/ML_PROJECTS/NETWORKSECURITY/mlruns/0/e1df1b47a4be416b9b68129b1ee03c07/artifacts
+end_time: 1748433702597
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e1df1b47a4be416b9b68129b1ee03c07
+run_name: placid-fly-256
+run_uuid: e1df1b47a4be416b9b68129b1ee03c07
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1748433697486
+status: 3
+tags: []
+user_id: D YELLESH
