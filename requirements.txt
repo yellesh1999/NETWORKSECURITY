@@ -7,6 +7,10 @@ pymongo>=4.0
 scikit-learn
 mlflow
 pyaml
+dagshub
+fastapi
+uvicorn
+
 
 
 
