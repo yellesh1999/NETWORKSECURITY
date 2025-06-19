@@ -1,6 +1,0 @@
-[ 2025-06-20 00:27:12,996] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
-[ 2025-06-20 00:27:13,002] 107 dagshub - INFO - Accessing as yellesh1999
-[ 2025-06-20 00:27:14,117] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/yellesh1999/NETWORKSECURITY "HTTP/1.1 200 OK"
-[ 2025-06-20 00:27:15,075] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
-[ 2025-06-20 00:27:15,078] 107 dagshub - INFO - Initialized MLflow to track repo "yellesh1999/NETWORKSECURITY"
-[ 2025-06-20 00:27:15,080] 107 dagshub - INFO - Repository yellesh1999/NETWORKSECURITY initialized!
