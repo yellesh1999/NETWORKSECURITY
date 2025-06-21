@@ -26,7 +26,10 @@ from sklearn.ensemble import (
 import mlflow
 
 import dagshub
-dagshub.init(repo_owner='yellesh1999', repo_name='NETWORKSECURITY', mlflow=True)
+import os 
+dagshub_token = os.getenv("DAGSHUB_TOKEN")
+
+dagshub.init(repo_owner='yellesh1999', repo_name='NETWORKSECURITY',token=dagshub_token, mlflow=True)
 
 
 class ModelTrainer:
