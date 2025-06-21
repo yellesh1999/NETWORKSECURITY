@@ -4,7 +4,7 @@ import os
 import certifi
 ca = certifi.where()
 
-from dotenv import load_dotenv
+from dotenv import load_dotenv #load
 load_dotenv()
 mongo_db_url = os.getenv("MONGODB_URL_KEY")
 print(mongo_db_url)
@@ -85,3 +85,5 @@ async def predict_route(request: Request,file: UploadFile = File(...)):
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
     app_run(app, host="0.0.0.0", port=port)
+    
+    
