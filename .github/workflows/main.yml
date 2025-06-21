@@ -78,17 +78,30 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Clean old Docker container and image
+      - name: Pull latest image
         run: |
-          # Stop and remove running container if exists
+          docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/networksecurity-ecr-repo:latest
+
+      - name: Stop and remove container if running (POSIX safe)
+        run: |
           if [ "$(docker ps -aq -f name=networksecurity)" ]; then
             echo "Stopping and removing existing container..."
-            docker stop networksecurity || true
-            docker rm -fv networksecurity || true
+            docker stop networksecurity
+            docker rm -fv networksecurity
           else
-            echo "No existing container to remove."
+            echo "No existing container to stop."
           fi
 
-          # Remove old image if exists
-          if [ "$(docker images -q ${{ secrets.AWS_ECR_LOGIN_URI }}/n_]()
-gi
+      - name: Run Docker Image to serve users
+        run: |
+          docker run -d -p 8080:8080 --ipc="host" --name=networksecurity \
+          -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+          -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+          -e AWS_REGION=${{ secrets.AWS_REGION }} \
+          -e DAGSHUB_TOKEN=${{ secrets.DAGSHUB_TOKEN }} \
+          ${{ secrets.AWS_ECR_LOGIN_URI }}/networksecurity-ecr-repo:latest
+
+      - name: Clean up unused images/containers
+        run: |
+          docker system prune -f
+
